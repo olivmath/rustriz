@@ -49,11 +49,3 @@ pub async fn not_found() -> Result<Response<Body>, Infallible> {
         .body("404 Not Found".into())
         .unwrap())
 }
-
-pub async fn routing(_req: Request<Body>) -> Result<Response<Body>, Infallible> {
-    match (_req.method(), _req.uri().path()) {
-        (&Method::POST, "/T") => transpose(_req).await,
-        (&Method::GET, "/") => root().await,
-        _ => not_found().await,
-    }
-}
