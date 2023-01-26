@@ -11,7 +11,7 @@ async fn req_to_matrix(req: Request<Body>) -> Result<Matrix_3x3, Error> {
 }
 
 pub async fn transpose(req: Request<Body>) -> Result<Response<Body>, Infallible> {
-    let matrix: Matrix_3x3 = match req_to_matrix(req).await {
+    let matrix: Matrix3x3 = match req_to_type(req).await {
         Ok(m) => m,
         Err(_) => {
             return Ok(Response::builder()
