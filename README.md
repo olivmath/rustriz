@@ -1,6 +1,6 @@
 # 🧮 Rustriz
 
-## Project for Learn Hyper + Queue + Stream
+## Project for Learn Hyper + Queue
 
 v0.2.0
 
